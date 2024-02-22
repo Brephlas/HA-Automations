@@ -1,0 +1,6 @@
+reload_google_home:
+  url: "http://homeassistant.local:8123/api/config/config_entries/entry/{{entry_id}}/reload"
+  method: "post"
+  headers:
+    Content-Type: "application/json"
+    Authorization: !secret long_living_token

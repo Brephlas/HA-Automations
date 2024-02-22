@@ -1,0 +1,12 @@
+alias: Work - In Teams Meeting
+description: ""
+trigger:
+  - platform: state
+    from: "off"
+    to: "on"
+    entity_id:
+      - binary_sensor.meeting_active
+condition: []
+action:
+  - service: shell_command.fritzbox_led_info_on
+  data: {}

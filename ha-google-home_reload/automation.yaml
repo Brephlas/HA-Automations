@@ -1,0 +1,14 @@
+alias: Self Reload - Google Timers
+description: ""
+trigger:
+  - platform: time
+    at: "07:00:00"
+condition: []
+action:
+  - service: shell_command.google_home_get_entryid
+    data: {}
+  - service: rest_command.reload_google_home
+    data:
+      entry_id: |
+        {{ states('input_text.google_home_entry_id') }}
+mode: single
